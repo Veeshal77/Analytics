@@ -71,4 +71,6 @@ Annual Salary Distribution
 - Create column -> Annual Salary 2 = Annual Salary 2 = TBL_Employees[Annual Salary]
 - Under Visualizations:
 - Select Line Chart -> X-axis="dCategory", Y-axis="Max of Annual Salary", "Min of Annual Salary2" -> Visual -> Values="On" -> Title="Off" -> Layout -> Maximum category width = "50px" -> Y-axis -> Range -> Min=0, Max=300000 -> Values="On" -> Title="Off" -> Markers="On" -> Add further Analysis to Visual -> Error Bars -> Apply Settings to -> series="Max of Annual Salary" -> Options -> Enabled="On" -> Upper bound="Max of Annual salary" -> Lower bound="Min of Annual Salary" -> Bar="On" -> Markers="Off" -> Tooltip="On"  
-  
+
+- HR Data Analysis dashboard:
+  ![Dashboard](https://github.com/user-attachments/assets/2871da70-ddcc-4efc-aae0-80f1c4d2257b)
