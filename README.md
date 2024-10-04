@@ -8,8 +8,8 @@ This Power BI dashboard provides key insights into:
 
 Highlights: 
 - Used Parameters / slicers to allow users to switch between dimensions
-- Leveraged DAX functions to create custom measures
-- Created Dumb bell chart using line charts to visualize min/max of annual salary
+- Createed custom measures using DAX functions 
+- Generated a Dumb bell chart using line charts to visualize min/max of annual salary
 
 Steps:
 - Load data from input excel file into power bi desktop. import datasets for Employees and job levels
