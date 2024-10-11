@@ -15,3 +15,5 @@ Visualize temperature distribution in a particular year for one or more cities
 Sample observation:
 Boston & New York temperatures have a high degree of variability compared to other cities in the dataset
 
+Dashboard:
+![Temperature Analysis](https://github.com/user-attachments/assets/0b4989b4-2540-4932-9ff0-a01c5fe35ca6)
