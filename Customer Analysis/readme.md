@@ -21,7 +21,7 @@ Average credit score for both males and females is around 650 and follows the no
 
 Average credit score variance increases for both genders after the age of 75 years
 
-3600 customers have zero balance. For the remaining 6400 customers, the balance follows normal distribution with approx. 3000 customers having a balance of around 112K
+Zero balance has a noticeably high count: 3600 customers. For the remaining 6400 customers, the balance follows normal distribution with approx. 3000 customers having a balance of around 112K
 
 Females account for 25% of all exits
 
