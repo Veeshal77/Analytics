@@ -27,3 +27,5 @@ Females account for 25% of all exits
 
 Males account for 16% of all exits
 
+Dashboard:
+![Customer Analysis](https://github.com/user-attachments/assets/610f6c6a-37c5-4188-8f17-3989b7272eeb)
