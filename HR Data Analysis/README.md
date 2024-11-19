@@ -18,59 +18,43 @@ Steps:
 - Merge "Job Level" column from Job levels dataset into the Employees dataset:
  Transform Data -> Home tab -> Merge Queries -> Select Employees.Job_title,Job_Level.Job_title and merge using left outer join
 
-Go to Report View 
-Under Data section do the following:
-- Add measure Avg Annual Salary for Females = 
+Under Data section add the following measures:
+- Avg Annual Salary for Females = 
 AVERAGEX(
 	FILTER('TBL_Employees',Lower('TBL_Employees'[Gender])="female"),
 	CALCULATE(SUM('TBL_Employees'[Annual Salary]))
 )
-- Add measure Avg Annual Salary for Males = 
+- Avg Annual Salary for Males = 
 AVERAGEX(
 	FILTER('TBL_Employees',Lower('TBL_Employees'[Gender])="male"),
 	CALCULATE(SUM('TBL_Employees'[Annual Salary]))
 )
-- Add measure Avg Bonus % for Females = 
+- Avg Bonus % for Females = 
 AVERAGEX(
 	Filter('TBL_Employees',Upper('TBL_Employees'[Gender])= "FEMALE"),
 	CALCULATE(SUM('TBL_Employees'[Bonus %]))
 )
-- Add measure Avg Bonus % for Males = 
+- Avg Bonus % for Males = 
 AVERAGEX(
 	Filter('TBL_Employees',Upper('TBL_Employees'[Gender])= "MALE"),
 	CALCULATE(SUM('TBL_Employees'[Bonus %]))
 )
-- Add measure Count of Females = Calculate(COUNTROWS('TBL_Employees'),lower('TBL_Employees'[Gender])="female")
-- Add measure Count of Males = Calculate(COUNTROWS('TBL_Employees'),lower('TBL_Employees'[Gender])="male")
+- Count of Females = Calculate(COUNTROWS('TBL_Employees'),lower('TBL_Employees'[Gender])="female")
+- Count of Males = Calculate(COUNTROWS('TBL_Employees'),lower('TBL_Employees'[Gender])="male")
 
+- Create a date table using Power Query or DAX
+- 
 Under Visualizations:
-- Add Text box = "SUMMARY" 
-- Select Card -> Add data to visual -> Fields="Count of Females" -> Format your visual -> Visual -> Callout Value -> Font Style=Verdana,Size = 15,Color=Pink -> Category Label -> Font = Verdana, size=12 -> General -> Data Format -> Apply setting to="Employee Count"
-- Select Card -> Add data to visual -> Fields="Avg Annual Salary for Females" -> Format your visual -> Visual -> Callout Value ->Font Style=Verdana,Size = 15,Color=Pink -> Category Label -> Font = Verdana, size=12 -> General ->Data Format -> Apply setting to="Avg Annual Salary" -> Format Options -> Format="Currency" -> Currency Format="$"
-- Select Card -> Add data to visual -> Fields="Avg Bonus % for Females" -> Format your visual -> Visual -> Callout Value ->Font Style=Verdana,Size = 15,Color=Pink -> Category Label -> Font = Verdana, size=12 -> General ->Data Format -> Apply setting to="Avg Bonus" -> Format Options -> Format="Percentage" ->
+- Add Summary section and underneadth add cards for Employee count, Avg. Annual Salary and Avg Bonus% for both Female employees
 - Similarly, add 3 cards for Males employee count, Average Annual Salary and Avg Bonus%
-
--Under Visualizations:
-Demography Section:
-- Select Donut chart -> Add data to your visual -> legend="Country" -> Values="Count of Country" -> Visual -> Slices -> set Colors -> Spacing -> Inner radius="80%" -> Details label -> Option ->Position="Prefer outside" -> label contents = "Category, percent of total"
-- Similarly, add donut chart for Ethnicity
-- To create Age Group donut, first create Age groups based on the Age data in Employees table
-- Table View -> Add Column -> Age Group = SWITCH(True(),'TBL_Employees'[Age] < 25, "Under 25 Years",
-				'TBL_Employees'[Age] >= 25 && 'TBL_Employees'[Age] < 45, "25 - 44 Years",
-				'TBL_Employees'[Age] >= 45 && 'TBL_Employees'[Age] < 65, "45 - 64 Years",
-				"65 Years or older")
-- Report View -> Add donut chart for Age group following previous steps from Country or Ethnicity donut charts 
-
-Annual Salary and Bonus %
--Under Visualizations:
-- Select Scatter chart -> Add data to your visual -> X axis="Annual Salary" -> Y axis="Bonus %" -> Visual -> X axis -> Type = "Continuous" -> Range -> Minimum=10000, Maximum=300000 -> Values -> Display unit="Thousands" -> Title="On" -> Y axis -> Values="On" -> Title="On" -> Gridlines -> Horizontal="Off", Vertical="Off" -> General -> Padding = "0px" -> Title ="On"
-
-Annual Salary Distribution
+- Add Donut charts for Country, Ethnicity and Age Group
+- Add Scatter plot to show distribution based on Annual Salary and Bonus %
+- Annual Salary Distribution:
 - Create  parameter field to allow users to switch between dimensions:
-- Go to Modelling -> New Parameter -> Fields -> Name = dCategory -> Add and reorder fields="Business unit, Country, Job level -> Select "Add slicer to page" -> Create
-- Create column -> Annual Salary 2 = Annual Salary 2 = TBL_Employees[Annual Salary]
-- Under Visualizations:
-- Select Line Chart -> X-axis="dCategory", Y-axis="Max of Annual Salary", "Min of Annual Salary2" -> Visual -> Values="On" -> Title="Off" -> Layout -> Maximum category width = "50px" -> Y-axis -> Range -> Min=0, Max=300000 -> Values="On" -> Title="Off" -> Markers="On" -> Add further Analysis to Visual -> Error Bars -> Apply Settings to -> series="Max of Annual Salary" -> Options -> Enabled="On" -> Upper bound="Max of Annual salary" -> Lower bound="Min of Annual Salary" -> Bar="On" -> Markers="Off" -> Tooltip="On"  
+- Show salary distribution by Business Unit, Country and Job Level
+- Plot count of employee hires by year and count of employee exits by year using the date table. 
 
-- HR Data Analysis dashboard:
+- HR Data Analysis report:
   ![Dashboard](https://github.com/user-attachments/assets/2871da70-ddcc-4efc-aae0-80f1c4d2257b)
+
+  ![Screenshot 2024-11-19 122724](https://github.com/user-attachments/assets/853ba75a-5d9b-4912-acea-0a47cfc5c4a5)
