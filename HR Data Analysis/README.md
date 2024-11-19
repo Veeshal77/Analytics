@@ -43,7 +43,7 @@ AVERAGEX(
 - Count of Males = Calculate(COUNTROWS('TBL_Employees'),lower('TBL_Employees'[Gender])="male")
 
 - Create a date table using Power Query or DAX
-- 
+
 Under Visualizations:
 - Add Summary section and underneadth add cards for Employee count, Avg. Annual Salary and Avg Bonus% for both Female employees
 - Similarly, add 3 cards for Males employee count, Average Annual Salary and Avg Bonus%
@@ -55,6 +55,6 @@ Under Visualizations:
 - Plot count of employee hires by year and count of employee exits by year using the date table. 
 
 - HR Data Analysis report:
-  ![Dashboard](https://github.com/user-attachments/assets/2871da70-ddcc-4efc-aae0-80f1c4d2257b)
+  ![Screenshot 2024-11-19 122724](https://github.com/user-attachments/assets/24c1a712-a95e-428b-adba-97235a7d5ba7)
 
   ![Screenshot 2024-11-19 122724](https://github.com/user-attachments/assets/853ba75a-5d9b-4912-acea-0a47cfc5c4a5)
